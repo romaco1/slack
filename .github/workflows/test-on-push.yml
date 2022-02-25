@@ -20,7 +20,7 @@ jobs:
         elif ${{contains(github.actor, 'yuliya')}}; then
           echo "::set-output name=name::yuliya"
         elif ${{contains(github.actor, 'stepan')}}; then
-          echo "::set-output name=name::Yevmenchik Stepan"
+             echo "::set-output name=name::Yevmenchik Stepan"
         else
           echo "::set-output name=name::unrecognised"
         fi
