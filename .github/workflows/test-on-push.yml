@@ -27,7 +27,7 @@ jobs:
     - name: echo Testing test failure
       run: echo "${{ github.actor }}"
     - uses: 8398a7/action-slack@v3
-      if: failure()
+      if: success()
       with:
         status: custom
         fields: message
