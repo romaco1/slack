@@ -57,7 +57,7 @@ jobs:
           ]
           }
       env:
-        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_MONITORING_CHANNEL }} # required
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_THOTH_MONITORING_CHANNEL }} # required
 
 
 
