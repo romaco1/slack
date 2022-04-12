@@ -20,7 +20,7 @@ jobs:
         elif ${{contains(github.actor, 'yuliya')}}; then
           echo "::set-output name=name::yuliya"
         elif ${{contains(github.actor, 'stepan')}}; then
-             echo "::set-output name=name::Yevmenchik Stepan"
+          echo "::set-output name=name::Yevmenchik Stepan"
         else
           echo "::set-output name=name::unrecognised"
         fi
@@ -34,30 +34,30 @@ jobs:
         custom_payload: |
           {
             "blocks": [
-          {
-            "type": "section",
-            "text": {
-              "type": "mrkdwn",
-              "text": `<@${{ steps.slack_username.outputs.name }}> your PR failed`
-            }
-          },
-          {
-            "type": "divider"
-          },
-              {
-                "type": "section",
-                "text": {
-                  "type": "mrkdwn",
-                  "text": `https://github.com/adaptemy-repo/thoth-frontend/pull/${{ github.event.number }}`
-                }
-              },
-              {
-                "type": "divider"
+            {
+              "type": "section",
+              "text": {
+                "type": "mrkdwn",
+                "text": `<@${{ steps.slack_username.outputs.name }}> test slack channel`
               }
-            ]
+            },
+            {
+              "type": "divider"
+            },
+            {
+              "type": "section",
+              "text": {
+                "type": "mrkdwn",
+                "text": `https://github.com/adaptemy-repo/thoth-frontend/pull/${{ github.event.number }}`
+              }
+            },
+            {
+              "type": "divider"
+            }
+          ]
           }
       env:
-        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_TESTING_CHANNEL }} # required
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_MONITORING_CHANNEL }} # required
 
 
 
